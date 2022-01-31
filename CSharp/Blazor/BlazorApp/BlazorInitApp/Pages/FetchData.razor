@@ -1,0 +1,46 @@
+﻿@page "/fetchdata"
+
+<PageTitle>Weather forecast</PageTitle>
+
+@using BlazorInitApp.Data
+@using BlazorInitApp.Models.Views
+
+@inject AccountService AccountServices
+
+<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from a service.</p>
+
+@if (accounts == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Fullname</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var acc in accounts)
+            {
+                <tr>
+                    <td>@acc.Username</td>
+                    <td>@acc.Fullname</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<AccountViewModel> accounts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        accounts = await AccountServices.GetAccountsAsync();
+    }
+}

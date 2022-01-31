@@ -1,0 +1,3 @@
+﻿using Send;
+
+SendMessage.Main();
