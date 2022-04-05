@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <a asp-controller="Demo" asp-action="Index2">Go to View 2</a>
+    <br /><br />
+    <a asp-controller="Demo" asp-action="Index3" asp-route-id="Le Ngoc Tu">Go to View 3</a>
+    <br /><br />
+    <a asp-controller="Demo" asp-action="Index4" asp-route-id="01" asp-route-name="Nguyen Ngoc Sang">Go to View 4</a>
+    <br /><br />
+    <a asp-controller="abcef_Controller" asp-action="Index1">Register</a>
+    <br /><br />
+    <a asp-controller="abcef_Controller" asp-action="details1" asp-route-id="42">Go to Details</a>
+    <br /><br />
+    <a asp-controller="abcef_Controller" asp-action="details2" asp-route-id="01" asp-route-name2="Ngoc Tu">Go to Details 2</a>
+</body>
+</html>

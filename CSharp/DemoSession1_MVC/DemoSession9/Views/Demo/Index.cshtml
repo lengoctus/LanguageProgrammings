@@ -1,0 +1,20 @@
+﻿@model DemoSession9.Models.Booking
+@{
+    ViewData["Title"] = "Demo Page";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            @*nb1: @Context.Session.GetInt32("nb1")*@
+            DayStart:@(ViewBag.d.ID)
+            <br />
+            <a asp-action="Index" asp-controller="Demo2">View Demo2</a>
+            <br />
+            <a asp-action="Index2" asp-controller="Demo">View Json</a>
+            <input type="type" name="name" value="" />
+        </div>
+    </div>
+
+    
+</div>

@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<input type="text" id="test"/>
+@section Scriptss{ 
+    <script>
+        $(document).ready(function () {
+            $("#test").datepicker();
+        })
+    </script>
+
+}

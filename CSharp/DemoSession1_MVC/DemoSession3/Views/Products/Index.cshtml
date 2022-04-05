@@ -1,0 +1,51 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />
+</head>
+<body>
+    <h3>Products List</h3>
+
+
+    <table border="1" cellspacing="1">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Price</td>
+                <td>Image</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in ViewBag.listProd)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Price</td>
+                    <td>
+                        <img src="~/images/@item.Image" alt="Alternate Text" />
+                    </td>
+                    <td align="center">
+                        <a asp-controller="prod" asp-action="detailss" asp-route-id="@item.Id">Detail</a>
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+
+
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+﻿@model DemoSession24_Security.Models.Account
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <p>@ViewBag.error</p>
+<form asp-controller="Account" asp-action="Login" method="post" >
+    <table class="table table-striped">
+        <tr>
+            <td>UserName:</td>
+            <td>
+                <input type="text" asp-for="UserName" />
+            </td>
+        </tr>
+        <tr>
+            <td>Password: </td>
+            <td>
+                <input type="password" asp-for="Password" />
+            </td>
+            <td>
+                <input type="submit" value="Login" class="btn btn-outline-dark"/>
+            </td>
+        </tr>
+    </table>
+</form>

@@ -1,0 +1,32 @@
+﻿@model IEnumerable<ReviewDB_Project.Models.ModelViews.ChuyenBay_View>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Ma Chuyen Bay</th>
+            <th>Ten Chuyen Bay</th>
+            <th>Ngay Di</th>
+            <th>Tuy Chon</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Macb</td>
+                <td>@item.Tencb</td>
+                <td>@item.Ngaydi</td>
+                <td>
+                    <span>Cap nhat || </span>
+                    <span>Dat ve || </span>
+                    <span>Danh sach ve</span>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<input type="text" id="keyword" />
+<br />
+<br />
+<select id="cbbCategory" class="form-control">
+    <option>SelectOne</option>
+    <option value="cate1">Category 1</option>
+    <option value="cate2">Category 2</option>
+    <option value="cate3">Category 3</option>
+    <option value="cate4">Category 4</option>
+</select>
+<br />
+<br />
+<table border="1" class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.listProd)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Price</td>
+                <td>@item.Category</td>
+            </tr>
+        }
+    </tbody>
+</table>

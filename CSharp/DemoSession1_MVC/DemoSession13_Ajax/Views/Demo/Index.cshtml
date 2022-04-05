@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Demo 1</h1>
+
+<form method="get" asp-controller="Demo" asp-action="Demo1">
+    <input type="button" value="Demo 1" id="dm1" class="btn btn-outline-primary" />
+</form>
+
+<span id="result1"></span>
+
+
+<hr />
+<hr />
+
+<h1>Demo 2(Parameter)</h1>
+
+<form method="get" asp-controller="Demo" asp-action="Demo2">
+    <input type="button" value="Demo 2" id="dm2" class="btn btn-outline-danger" />
+</form>
+
+<span id="result2"></span>
+
+<hr />
+<hr />
+
+<h1>Demo 3(Parameters)</h1>
+
+@*<form method="post" asp-controller="Demo" asp-action="Demo3">*@
+    <input type="button" value="Demo 3" id="dm3" class="btn btn-outline-danger" />
+@*</form>*@
+
+<span id="result3"></span>
+
+<hr />
+<hr />
+
+<h1>Demo 4</h1>
+<fieldset>
+    <legend>Check UserName</legend>
+    <form>
+        UserName: <input type="text" id="username" />
+        <input type="button" id="check" value="Check" />
+        <span id="result4"></span>
+    </form>
+</fieldset>
+
+<hr />
+<hr />
+
+<h1>Demo 5(Object)</h1>
+
+<form>
+    <input type="button" value="Demo 5" id="dm5" class="btn btn-outline-danger" />
+</form>
+
+<span id="result5"></span>
+
+<hr />
+<hr />
+
+
+<h1>Demo 6</h1>
+
+<form>
+    <input type="button" value="Demo 6" id="dm6" class="btn btn-outline-danger" />
+</form>
+
+<table border="1" id="prods">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Price</td>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>

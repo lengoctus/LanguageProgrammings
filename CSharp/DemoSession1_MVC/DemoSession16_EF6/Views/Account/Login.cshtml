@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Login</h1>
+
+<form asp-controller="Account" asp-action="Login" method="post">
+    <p>@ViewBag.error</p>
+    <table class="table table-striped" border="1">
+        <tr>
+            <td>User Name: </td>
+            <td>
+                <input type="text" name="UserName" class="form-control" />
+            </td>
+        </tr>
+
+        <tr>
+            <td>Password: </td>
+            <td>
+                <input type="text" name="Password" class="form-control" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Create" />
+            </td>
+        </tr>
+    </table>
+</form>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

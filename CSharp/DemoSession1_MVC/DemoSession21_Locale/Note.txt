@@ -1,0 +1,1 @@
+﻿Dùng đê load content tĩnh, vd như khi thay đổi lá cờ ngôn ngữ thì page phải thay đổi theo ngôn ngữ đó 

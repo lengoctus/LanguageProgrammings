@@ -1,0 +1,96 @@
+﻿@model DemoSession6.ViewModels.Accounts_ViewModels
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h3>Register</h3>
+
+    <form asp-action="save" asp-controller="account" method="post" enctype="multipart/form-data">
+        <table border="1" cellpadding="5">
+            <tr>
+                <td>User Name</td>
+                <td>
+                    <input type="text" asp-for="@Model.Account.UserName" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>Password</td>
+                <td>
+                    <input type="password" asp-for="@Model.Account.Password" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>Full Name</td>
+                <td>
+                    <input type="text" asp-for="@Model.Account.FullName" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>Age</td>
+                <td>
+                    <input type="text" asp-for="@Model.Account.Age" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>Active</td>
+                <td>
+                    <input type="checkbox" asp-for="@Model.Account.Active" checked="@Model.Account.Active" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <input type="radio" asp-for="@Model.Account.Gender" value="true" checked /> Male
+                    <input type="radio" asp-for="@Model.Account.Gender" value="false" /> Female    
+                </td>
+            </tr>
+
+            <tr>
+                <td>Role</td>
+                <td>
+                    <select asp-for="@Model.Account.Role" asp-items="@Model.Roles"></select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Image</td>
+                <td>
+                    <input type="file" name="photo"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Description</td>
+                <td>
+                    <textarea asp-for="@Model.Account.Description" rows="5" cols="20"></textarea>
+                </td>
+            </tr>
+
+
+
+            <tr style="text-align:center">
+                <td colspan="2">
+                    <input type="submit" value="Save" />
+                </td>
+            </tr>
+
+        </table>
+        <input type="hidden" asp-for="@Model.Account.Id"/>
+    </form>
+
+</body>
+</html>

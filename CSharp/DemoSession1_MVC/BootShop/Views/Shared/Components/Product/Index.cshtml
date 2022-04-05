@@ -1,0 +1,13 @@
+﻿@model IEnumerable<BootShop.Models.Entities.Product>
+@foreach (var item in Model)
+{
+    <div class="thumbnail">
+        <img src="~/themes/images/products/@item.Photo" alt="@item.Name">
+        <div class="caption">
+            <h5>Panasonic</h5>
+            <h4 style="text-align:center"><a class="btn" asp-controller="Product" asp-action="Details" asp-route-idProd ="@item.Id"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">$@item.Price</a></h4>
+        </div>
+    </div>
+<br />
+}
+

@@ -1,0 +1,45 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />
+</head>
+<body>
+
+    <table border="1" cellspacing="1">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Price</td>
+                <td>Image</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>@ViewBag.prod.Id</td>
+                <td>@ViewBag.prod.Name</td>
+                <td>@ViewBag.prod.Price</td>
+                <td>
+                    <img src="~/images/@ViewBag.prod.Image" alt="Alternate Text" />
+                </td>
+                <td align="center">
+                    <a asp-controller="Products" asp-action="detailss" asp-route-id="@ViewBag.prod.Id"></a>
+                </td>
+            </tr>
+
+        </tbody>
+
+        </table>
+    <br />
+    <a href="@TempData["url"]">Back</a>
+</body>
+</html>

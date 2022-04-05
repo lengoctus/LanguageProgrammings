@@ -1,0 +1,63 @@
+﻿@model DemoSession22_SendMail.Models.Contact
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<table>
+</table>
+@ViewBag.err
+
+<form asp-controller="Contact" asp-action="Send" method="post">
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>
+                <input type="text" asp-for="Name" />
+            </td>
+        </tr>
+
+        <tr>
+            <td>Phone</td>
+            <td>
+                <input type="text" asp-for="Phone" />
+            </td>
+        </tr>
+
+        <tr>
+            <td>Email</td>
+            <td>
+                <input type="text" asp-for="Email" />
+            </td>
+        </tr>
+
+        <tr>
+            <td>Address</td>
+            <td>
+                <input type="text" asp-for="Address" />
+            </td>
+        </tr>
+
+        <tr>
+            <td>Subject</td>
+            <td>
+                <input type="text" asp-for="Subject" />
+            </td>
+        </tr>
+
+        <tr>
+            <td>Content</td>
+            <td>
+                <input type="text" asp-for="Content" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Send" />
+            </td>
+        </tr>
+    </table>
+</form>

@@ -1,0 +1,61 @@
+﻿@model Demoession8.Models.Account
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Register</h1>
+
+<form asp-action="Register" asp-controller="Account" method="post">
+    <table border="1" class="table table-striped">
+        <tbody>
+            <tr>
+                <td>User Name:</td>
+                <td>
+                    <input type="text" asp-for="@Model.UserName" class="form-control" />
+                    <span asp-validation-for="@Model.UserName" class="text-danger"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Password:</td>
+                <td>
+                    <input type="password" asp-for="@Model.Password" class="form-control" />
+                    <span asp-validation-for="@Model.Password" class="text-danger"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Email:</td>
+                <td>
+                    <input type="text" asp-for="@Model.Email" class="form-control" />
+                    <span asp-validation-for="@Model.Email" class="text-danger"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Url:</td>
+                <td>
+                    <input type="text" asp-for="@Model.Website" class="form-control" />
+                    <span asp-validation-for="@Model.Website" class="text-danger"></span>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>Age:</td>
+                <td>
+                    <input type="number" asp-for="@Model.Age" class="form-control" value="18"/>
+                    <span asp-validation-for="@Model.Age" class="text-danger"></span>
+                </td>
+            </tr>
+
+
+            <tr style="text-align:center">
+                <td colspan="2">
+                    <input type="submit" value="Submit" class="btn btn-warning text-white" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</form>

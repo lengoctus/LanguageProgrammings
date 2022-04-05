@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewData["Title"] = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Profile</h1>
+
+<table>
+    <tr>
+        <td>UserName</td>
+        <td>
+            <input type="text" value="@Model.UserName" name="UserName"/>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Gender</td>
+        <td>
+            <input type="radio" name="@Model.Gender" checked="@Model.Gender"/>  Female
+            <input type="radio" name="@Model.Gender" checked="@(Model.Gender == false ? true: false)"/>  Male
+        </td>
+    </tr>
+
+    <tr>
+        <td>Email</td>
+        <td>
+            <input type="text" name="@Model.Email" value="@Model.Email" />
+        </td>
+    </tr>
+
+    <tr>
+        <td>Birthday</td>
+        <td>
+            <input type="text" name="@Model.Birthday" value="@Model.Birthday" />
+        </td>
+    </tr>
+</table>

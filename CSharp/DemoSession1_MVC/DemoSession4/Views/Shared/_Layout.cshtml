@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/css/Style.css")" rel="stylesheet" />
+    @RenderSection("head", required: false)
+</head>
+<body>
+    <div>
+        <a asp-controller="Home" asp-action="index">Home</a>
+        <a asp-controller="About" asp-action="Index">About</a>
+        <a asp-controller="News" asp-action="Index">News</a>
+
+        @RenderBody()
+    </div>
+</body>
+</html>

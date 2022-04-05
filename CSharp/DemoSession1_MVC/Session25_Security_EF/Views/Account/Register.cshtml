@@ -1,0 +1,53 @@
+﻿@model Session25_Security_EF.ViewModels.AccountViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+    <form method="post" asp-controller="account" asp-action="register">
+        <table>
+            <tr>
+                <td>Username</td>
+                <td><input type="text" asp-for="account.Username" /></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" asp-for="account.Password" /></td>
+            </tr>
+            <tr>
+                <td>Full Name</td>
+                <td><input type="text" asp-for="account.FullName" /></td>
+            </tr>
+            <tr>
+                <td>Enabled</td>
+                <td><input type="checkbox" asp-for="account.Enabled" /></td>
+            </tr>
+            <tr>
+                <td valign="top">Roles</td>
+                <td valign="top">
+                    @foreach (var role in Model.Roles)
+                    {
+                        <div>
+                            <input type="checkbox" name="roles" value="@role.Id" />         @role.Name
+                        </div>
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <input type="submit" value="Save" />
+                    <br />
+                    <a asp-controller="account" asp-action="login">Login</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>

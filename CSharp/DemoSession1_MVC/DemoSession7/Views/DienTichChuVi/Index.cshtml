@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h3>Dien Tich Chu Vi</h3>
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="post" asp-controller="DienTichChuVi" asp-action="Caculator">
+            Chieu dai: <input type="number" name="nb1" min="1" />
+            Chieu rong: <input type="number" name="nb1" min="1" />
+            <input type="submit" value="Result" class="btn btn-primary" />
+        </form>
+    </div>
+
+    <div class="col-md-6">
+        @if (ViewBag.chuvi != null && ViewBag.dientich != null)
+        {
+            <div>Chu Vi: @ViewBag.chuvi</div>
+            <div>Dien Tich: @ViewBag.dientich</div>
+        }
+    </div>
+</div>
+<hr />
+<hr />
+<hr />
+<div class="row">
+    <form asp-action="LoadImg" asp-controller="DienTichChuVi" method="post" enctype="multipart/form-data">
+        <div class="loadImg">
+            <img src="~/images/B612_20180215_104133.jpg" width="200px" height="200px" name="img"/>
+        </div>
+
+        <input type="radio" name="Change" value="300x300" checked/> 300x300
+        <input type="radio" name="Change" value="500x500"/> 500x500
+        <input type="radio" name="Change" value="600x600"/> 600x600
+        <br />
+        <input type="submit" value="Change Size"/>
+    </form>
+</div>

@@ -1,0 +1,50 @@
+﻿@using System.Security.Claims;
+@{
+    var user = User.FindFirst(ClaimTypes.Name);
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td colspan="2">
+                <h4>Welcome @user.Value</h4>
+                <a asp-controller="account" asp-action="logout">Logout</a>
+            </td>
+        </tr>
+        <tr>
+            <td width="200px" valign="top">
+                <ul>
+                    @if (User.IsInRole("SuperAdmin"))
+                    {
+
+                        <li>
+                            <a asp-area="Admin" asp-controller="Category" asp-action="Index">Category</a>
+                        </li>
+
+                    }
+                    <li>
+                        <a asp-area="Admin" asp-controller="Product" asp-action="Index">Product</a>
+                    </li>
+                    <li>
+                        <a asp-area="Admin" asp-controller="Customer" asp-action="Index">Customer</a>
+                    </li>
+                </ul>
+
+            </td>
+        </tr>
+        <tr>
+            <td>@RenderBody()</td>
+        </tr>
+        <tr>
+            <td colspan="2">Copyright</td>
+        </tr>
+    </table>
+</body>
+</html>

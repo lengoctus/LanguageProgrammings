@@ -1,0 +1,56 @@
+﻿@model DemoSession6.ViewModels.Products_ViewModels
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+    <h4>Create Product</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Index" asp-controller="Product" method="get">
+                <table border="1" cellpadding="5px">
+                    <tr>
+                        <td>ID</td>
+                        <td>
+                            <input type="text" name="@Model.product.Id" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td>
+                            <input type="text" name="@Model.product.Name" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Price</td>
+                        <td>
+                            <input type="text" name="@Model.product.Price" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Quantity</td>
+                        <td>
+                            <input type="text" name="@Model.product.Quantity" />
+                        </td>
+                    </tr>
+
+                    <tr style="text-align:center">
+                        <td colspan="2">
+                            <input type="submit" value="Save" />
+                        </td>
+                    </tr>
+
+                </table>
+
+            </form>
+        </div>
+    </div>
+
+
+</body>
+</html>

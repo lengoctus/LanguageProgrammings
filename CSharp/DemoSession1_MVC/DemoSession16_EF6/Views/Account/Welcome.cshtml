@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewData["Title"] = "Welcome";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Welcome</h1>
+
+<h3>WelCome @(Context.Session.GetString("user"))</h3>
+<br />
+<br />
+<br />
+<a asp-controller="Account" asp-action="Logout">LogOut</a>
+<br />
+<br />
+<br />
+<a asp-action="Profile" asp-controller="Account">Profile</a>

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<DemoSession23_Paypal.Models.Item>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var index = 0;
+}
+
+<h1>Index</h1>
+
+
+<form action="@ViewBag.postUrl" method="post">
+    <table class="table table-striped">
+
+        @foreach (var item in @Model)
+        {
+            index++;
+
+            <tr>
+                <td>
+                    <div>
+                        Id: @item.Product.Id
+                        <br />
+                        Name: @item.Product.Name
+                        <br />
+                        Price: @item.Product.Price
+                        <br />
+                        Quantity: @item.Quantity
+
+                        <input type="hidden" name="item_number_@index" value="@item.Product.Id" />
+                        <input type="hidden" name="item_name_@index" value="@item.Product.Name" />
+                        <input type="hidden" name="amount_@index" value="@item.Product.Price" />
+                        <input type="hidden" name="quantity_@index" value="@item.Quantity" />
+                    </div>
+                    <div>
+                        <input type="submit" value="Buy" />
+                    </div>
+                </td>
+            </tr>
+        }
+    </table>
+    <input type="submit" value="Checkout" />
+    <input type="hidden" name="upload" value="1" />
+    <input type="hidden" name="cmd" value="_cart" />
+    <input type="hidden" name="business" value="@ViewBag.bussiness" />
+    <input type="hidden" name="return" value="@ViewBag.returnUrl" />
+</form>

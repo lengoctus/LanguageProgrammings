@@ -1,0 +1,52 @@
+﻿@using DemoSession1_MVC.Models
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/css/Style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <h3>Student Info</h3>
+    @{
+        var stu = new Students
+        {
+            ID = "sp001",
+            Name = "Ngoc Tu",
+            Birthday = DateTime.Now,
+            Images = "../images/73341324_147410913306862_6242422445735673856_n.jpg"
+        };
+    }
+    <table>
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Birthday</td>
+                <td>Image</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@stu.ID</td>
+                <td>@stu.Name</td>
+                <td>@stu.Birthday</td>
+                <td>
+                    <img src="@stu.Images" alt="Alternate Text" />
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+
+
+    <script src="@Url.Content("~/js/lib1.js")"></script>
+</body>
+</html>

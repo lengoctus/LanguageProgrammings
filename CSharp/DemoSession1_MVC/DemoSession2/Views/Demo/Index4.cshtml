@@ -1,0 +1,44 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index4</title>
+    <link href="~/css/Style.css" rel="stylesheet" />
+</head>
+<body>
+    <h3>Invoice Info</h3>
+    Id: @ViewBag.inv.Id
+    <br />
+    Name: @ViewBag.inv.Name
+    <br />
+    Created: @ViewBag.inv.Created.ToString("dd-MM-yyyy")
+    <br />
+    Payment: @ViewBag.inv.Payment
+
+    <h3>Customer Info</h3>
+    Id: @ViewBag.inv.Customer.Id
+    <br />
+    Name: @ViewBag.inv.Customer.Name
+    <br />
+    Address: @ViewBag.inv.Customer.Address
+    <br />
+    Email: @ViewBag.inv.Customer.Email
+
+    <h3>Product Info</h3>
+    @foreach (var item in ViewBag.inv.Products)
+    {
+        <p>Id: @item.Id</p>
+        <p>Name: @item.Name</p>
+        <p>Price: @item.Price</p>
+        <p>Quantity: @item.Quantity</p>
+        <p>Image: <img src="@Url.Content("~/images/"+@item.Image)" alt="Alternate Text" /></p>
+        <p>Status: @item.Status</p>
+    }
+</body>
+</html>

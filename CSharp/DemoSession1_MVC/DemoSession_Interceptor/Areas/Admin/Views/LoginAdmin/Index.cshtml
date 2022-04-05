@@ -1,0 +1,30 @@
+﻿@model DemoSession19_Interceptor.Models.Account
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Index</h1>
+
+<form asp-controller="LoginAdmin" asp-action="Login" asp-area="Admin" method="post">
+    <table class="table table-striped form-control" border="1">
+        <tr>
+            <td>User Name</td>
+            <td>
+                <input type="text" asp-for="UserName" class="form-control"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>
+                <input type="password" asp-for="Password" class="form-control"/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Create" class="btn btn-outline-warning" />
+            </td>
+        </tr>
+    </table>
+</form>

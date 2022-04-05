@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<ol>
+    @foreach (var item in ViewBag.questionModel)
+    {
+        <li>@item.Content
+            <ol type="a">
+                @foreach (var item2 in item.Answers)
+                {
+                    <li>@item2.Content</li>
+                }
+            </ol>
+        </li>
+    }
+</ol>

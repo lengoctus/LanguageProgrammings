@@ -1,0 +1,7 @@
+﻿@model IEnumerable<BootShop.Models.Entities.Category>
+<ul id="sideManu" class="nav nav-tabs nav-stacked">
+    @foreach (var item in Model)
+    {
+        <li><a href="products.html">@item.Name</a></li>
+    }
+</ul>

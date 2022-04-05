@@ -1,0 +1,50 @@
+﻿@model DemoSession18_EFCore.Models.ModelView.OrderView
+
+@{
+    ViewData["Title"] = "Add";
+}
+
+<form asp-controller="Order" asp-action="Add" method="post">
+    <table class="table table-striped" border="1">
+        <tr>
+            <td>Name</td>
+            <td>
+                <input type="text" asp-for="@Model.Name" />
+            </td>
+        </tr>
+        <tr>
+            <td>Payment</td>
+            <td>
+                <input type="radio" value="paypal" asp-for="@Model.Payment" checked/> Paypal
+                <br />
+                <input type="radio" value="cast" asp-for="@Model.Payment" /> Paypal
+                <br />
+                <input type="radio" value="credit" asp-for="@Model.Payment" /> Paypal
+            </td>
+        </tr>
+        <tr>
+            <td>Status</td>
+            <td>
+                <input type="checkbox" asp-for="@Model.Status" />
+            </td>
+        </tr>
+        <tr>
+            <td>Employee</td>
+            <td>
+                <select asp-for="@Model.EmployeeId" asp-items="@Model.Employees"></select>
+            </td>
+        </tr>
+        <tr>
+            <td>Account</td>
+            <td>
+                <select asp-for="@Model.AccountId" asp-items="@Model.Accounts"></select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Submit" class="btn btn-danger" />
+            </td>
+        </tr>
+    </table>
+
+</form>

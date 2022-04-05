@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<form method="post" asp-controller="Product" asp-action="Search">
+    Keyword: <input type="text" name="keyword" class="form-control" />
+    <input type="submit" value="Search" class="btn btn-success" />
+</form>
+
+
+<hr />
+<hr />
+<hr />
+
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="post" asp-controller="Product" asp-action="UpdateCart">
+            Keyword: <input type="number" min="1" name="Quantity" class="form-control" />
+            Keyword 2: <input type="number" min="1" name="Quantity" class="form-control" />
+            Keyword 3: <input type="number" min="1" name="Quantity" class="form-control" />
+            Keyword 4: <input type="number" min="1" name="Quantity" class="form-control" />
+            <input type="submit" value="Update" class="btn btn-danger" />
+        </form>
+    </div>
+
+    <div class="col-md-6">
+        @if (ViewBag.total != null)
+        {
+            <span>@ViewBag.total</span>
+        }
+    </div>
+</div>
+
+
