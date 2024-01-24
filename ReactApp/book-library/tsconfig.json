@@ -17,9 +17,11 @@
         "moduleResolution": "Node",
         "resolveJsonModule": true,
         "noEmit": true,
+        "allowImportingTsExtensions": true,
         "jsx": "react-jsx",
     },
     "include": [
-        "src"
+        "src",
+        "src/react-app-env.d.ts"
     ]
 }
