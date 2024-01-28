@@ -1,8 +1,10 @@
-import { RouteObject, useRoutes } from "react-router-dom";
-import Themeroutes from "./routes/Router";
-import FullLayout from "./layouts/FullLayout";
+import { useRoutes } from "react-router-dom";
+import AppRouter from "./routes/Router";
 
 export const App = () => {
-  const routing = useRoutes([{ path: "/", element: <FullLayout /> }]);
-  return <div className="dark">{routing}</div>;
+  return (
+    <div className="dark">
+      <AppRouter />
+    </div>
+  );
 };
