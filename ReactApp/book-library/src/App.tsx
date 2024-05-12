@@ -1,10 +1,7 @@
-import { useRoutes } from "react-router-dom";
-import AppRouter from "./routes/Router";
+import { FC } from "react";
+import { RouterProvider } from "react-router-dom";
+import Router from "./routes/Router";
 
-export const App = () => {
-  return (
-    <div className="dark">
-      <AppRouter />
-    </div>
-  );
-};
+const App: FC = () => <RouterProvider router={Router}></RouterProvider>;
+
+export default App;

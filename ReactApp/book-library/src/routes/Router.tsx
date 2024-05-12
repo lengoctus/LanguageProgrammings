@@ -1,17 +1,23 @@
-import { FC } from "react";
-import { RouteObject, useRoutes } from "react-router-dom";
-import FullLayout from "../layouts/FullLayout";
+import { createBrowserRouter } from "react-router-dom";
+import { Main } from "../layouts/Main";
 
-const AppRouter: FC = () => {
-  const mainRoutes: RouteObject = {
+const Router = createBrowserRouter([
+  {
     path: "/",
-    element: <FullLayout />,
-    children: [],
-  };
+    element: <div>Home</div>,
+    // loader:
+    children: [
+      {
+        path: "/",
+        element: <Main />,
+        // loader:
+      },
+    ],
+  },
+  {
+    path: "/about",
+    element: <div>About</div>,
+  },
+]);
 
-  const routing = useRoutes([mainRoutes]);
-
-  return <>{routing}</>;
-};
-
-export default AppRouter;
+export default Router;
