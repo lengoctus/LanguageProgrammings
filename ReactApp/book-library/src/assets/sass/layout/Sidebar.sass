@@ -1,0 +1,26 @@
+$sidebar-radius: 20px
+$sidebar-item-active-color: #4A83F6
+
+.sidebar-part
+    .nav-link
+        color: $font-color
+    .sidebar-align
+        padding-left: 3rem
+
+    .sidenav-bg
+        &:hover
+            background-color: $sidebar-item-active-color
+            border-radius: $sidebar-radius
+        .nav-link
+            color: $font-color
+        .active
+            background-color: $sidebar-item-active-color
+            border-radius: $sidebar-radius
+            color: $font-color
+        span
+            margin-left: 1rem
+
+    .sidenav-features
+        position: absolute
+        bottom: 1rem
+        width: 100%
